@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+  top:0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Fondo fijo */
+.background {
+  position: fixed;
+  inset: 0;
+
+  background-image: url("../imagenes/posible_fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  backface-visibility: hidden;
+  will-change: transform;
+
+  transform: scale(1.02);
+
+  z-index: -1;
+}
+
+/* Pantalla inicial */
+.startScreen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.8s ease;
+}
+
+.mainLayout {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenido inicio */
+.startContent {
+  text-align: center;
+}
+
+/* Título */
+.title {
+  color: rgb(255, 255, 255);
+  font-size: 70px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Botón inicio */
+.startButton {
+  padding: 18px 45px;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.2s;
+  animation: pulse 3s infinite;
+}
+
+.startButton:hover {
+  transform: scale(1.08);
+}
+
+/* Fade out */
+.fadeOut {
+  opacity: 0;
+}
+
+/* Fade in */
+.fadeIn {
+  animation: fadeIn 1s ease;
+}
+
+
+
+
+/* ELECCION SHINY */
+/* Boton shiny */
+.shinyCard {
+  box-shadow: 0 0 20px gold;
+}
+
+
+
+
+
+/* REGIONES */
+/* Pantalla regiones */
+.regionScreen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+}
+
+/* Título */
+.regionTitle {
+  color: white;
+  font-size: 40px;
+  margin-top: -20px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Grid */
+.regionGrid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Cards */
+.regionCard {
+  padding: 30px 20px;
+
+  border: none;
+  border-radius: 20px;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  color: white;
+
+  background: rgba(255,255,255,0.15);
+
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+/* Hover */
+.regionCard:hover {
+  transform: translateY(-5px) scale(1.03);
+
+  background: rgba(255,255,255,0.25);
+}
+
+
+
+
+
+
+
+/* POKEDEX */
+
+/* BOTON RETROCESO */
+.backButton {
+  position: absolute;
+  top: 55px;
+  left: 20px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.backButton:hover {
+  transform: scale(1.05);
+  background: rgba(0,0,0,0.7);
+}
+
+/* REGION */
+.regionName {
+  margin-top: 10px;
+  margin-bottom: -5px;
+  font-size: 50px;
+}
+
+/* Buscador centrado */
+.buscador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido principal */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor principal */
+section {
+  margin-right: 4%;
+  margin-left: 4%;
+}
+
+/* Grid responsive */
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+/* Lista */
+.listaPokemones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.listaPokemones section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Tarjetas */
+.card {
+  min-width: 0;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* Imagen */
+.card img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Nombre */
+.card p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Buscador */
+input {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 18px;
+  width: 60%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  backdrop-filter: blur(6px);
+}
+
+
+/* Animaciones */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
